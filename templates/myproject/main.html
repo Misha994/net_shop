@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}all contacts{% endblock %}
+
+{% block header %}<h1>Main page</h1>{% endblock %}
+
+{% block content %}
+    <a href="{% url 'all_contacts' %}">all contacts</a><br/>
+    <a href="{% url 'all_places' %}">all places</a><br/>
+    <a href="{% url 'all_shops' %}">all shops</a><br/>
+    <a href="{% url 'all_warehouses' %}">all warehouses</a>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Detail shop {{ warehouse }}{% endblock %}
+
+{% block header %}<a href="{% url 'main' %}">Main page</a>{% endblock %}
+
+{% block content %}
+    <h3>Warehouse detail</h3>
+    <p>{{ warehouse }}</p>
+    <p>{{ warehouse.city }}</p>
+    <p>{{ warehouse.address }}</p>
+{% endblock %}
+
+

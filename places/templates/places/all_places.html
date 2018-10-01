@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}all places{% endblock %}
+
+{% block header %}<a href="{% url 'main' %}">Main page</a>{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for place in places %}
+            <li>
+                <a href="{% url 'place' place.pk %}">{{ place }}</a> <a href="{% url 'place_edit' place.pk %}">edit</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <p><a href="{% url 'place_add' %}">add city</a></p>
+    <p><a href="{% url 'country_add' %}">add country</a></p>
+
+{% endblock %}

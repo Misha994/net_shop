@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}all contacts{% endblock %}
+
+{% block header %}<a href="{% url 'main' %}">Main page</a>{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for contact in contacts %}
+            <li><a href="{% url 'contact' contact.pk %}">{{ contact }}</a>
+                <a href="{% url 'contact_edit' contact.pk %}">edit</a></li>
+        {% endfor %}
+    </ul>
+    <p><a href="{% url 'contact_add' %}">add</a></p>
+{% endblock %}

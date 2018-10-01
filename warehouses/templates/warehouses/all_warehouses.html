@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}all warehouses{% endblock %}
+
+{% block header %}<a href="{% url 'main' %}">Main page</a>{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for warehouse in warehouses %}
+            <li>
+                <a href="{% url 'warehouse' warehouse.pk %}">{{ warehouse }}</a>
+                <a href="{% url 'warehouse_edit' warehouse.pk %}">edit</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <p><a href="{% url 'warehouse_add' %}">add</a></p>
+{% endblock %}
+

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Detail place {{ place }}{% endblock %}
+
+{% block header %}<a href="{% url 'main' %}">Main page</a>{% endblock %}
+
+{% block content %}
+    <h3>Place detail</h3>
+    <p>{{ place }}</p>
+    <p>{{ place.country }}</p>
+{% endblock %}

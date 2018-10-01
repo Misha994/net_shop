@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Detail shop {{ shop }}{% endblock %}
+
+{% block header %}<a href="{% url 'main' %}">Main page</a>{% endblock %}
+
+
+
+{% block content %}
+    <h3>Shop detail</h3>
+    <p>{{ shop }}</p>
+    <p>address: {{ shop.address }}</p>
+    <p>city: {{ shop.city }}</p>
+    <p>owner: {{ shop.owner }}</p>
+    <p>employees:
+        {% for employee in shop.employee.all %}
+            {{ employee }},
+        {% endfor %}
+    </p>
+    <p>warehouses:
+        {% for warehouse in shop.warehouses.all %}
+            {{ warehouse }},
+        {% endfor %}
+    </p>
+    <p>shop type: {{ shop.shop_type }}</p>
+    <p><a href="">{{ shop.site }}</a></p>
+
+    {% load shoptags %}
+    <hr>
+    <p>Sorted employees</p>
+    {{ shop|sort }}
+{% endblock %}
+

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}all contacts{% endblock %}
+
+{% block header %}<a href="{% url 'main' %}">Main page</a>{% endblock %}
+
+{% block content %}
+    {% include 'show_messages.html' %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit">
+    </form>
+{% endblock %}

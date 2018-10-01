@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}all shops{% endblock %}
+
+{% block header %}<a href="{% url 'main' %}">Main page</a>{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for shop in object_list %}
+            <li><a href="{% url 'shop' shop.pk %}">{{ shop.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
